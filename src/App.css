@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+/* Default styles for elements */
+body,
+h1,
+p {
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Light mode styles */
+.bright-mode {
+  background-color: #fff;
+  color: #171c28;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Dark mode styles */
+.dark-mode {
+  background-color: #171c28;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Additional styles */
+.dark-mode .MuiAppBar-root {
+  background-color: #171c28;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark-mode .MuiButton-root {
+  color: #fff;
 }

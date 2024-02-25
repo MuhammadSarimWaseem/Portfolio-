@@ -1,0 +1,49 @@
+.Experience-Heading {
+    text-align: center;
+}
+
+.Experience-Card {
+    display: inline-block;
+    flex-wrap: wrap;
+    color: white;
+    padding: 80px 80px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.Language {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin: 0% 10% 0% 10%;
+    font-size: 3em;
+    animation: slideIn 1s ease-in-out;
+}
+
+.Experience-Card-Component {
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding: 15px 32px;
+}
+
+@media (max-width: 746px) {
+
+    .Experience-Card {
+        display: block;
+        padding: 20px 20px;
+        margin: 4px 2px;
+    }
+
+    .Language {
+        margin: 0% 10% 0% 10%;
+        font-size: 1.8em;
+    }
+
+    .Experience-Card-Component {
+        padding: 15px 32px;
+        font-size: 1em;
+    }
+}
