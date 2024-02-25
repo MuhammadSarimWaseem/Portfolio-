@@ -12,12 +12,12 @@ export default function Project() {
     return (
         <Fragment>
             <h1 className='Project-Heading'>PROJECTS</h1>
-            <div className='Card-Component'>
+            <div className='Card-Component'  >
                 {Data.map((val) => (
                     <Card key={val.id} className='Card' sx={{ maxWidth: 345, backgroundColor: "#171c28", color: "#fff" }}>
-                        <Link href={val.link} sx={{ color: "#fff", textDecorationLine: "none" }}>
-                            <CardActionArea sx={{ color: "#fff" }}>
-                                <CardContent>
+                        <Link href={val.link} sx={{ color: "#fff", textDecorationLine: "none" }} >
+                            <CardActionArea sx={{ color: "#fff" }} >
+                                <CardContent >
                                     <Typography gutterBottom variant="h5" component="div" sx={{ color: "#fff" }}>
                                         <FontAwesomeIcon icon={faCode} /> {val.name}
                                     </Typography>

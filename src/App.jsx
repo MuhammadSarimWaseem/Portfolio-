@@ -37,14 +37,14 @@ function App() {
                   {item}
                 </Button>
               ))}
-              <Fab variant="extended" onClick={toggleTheme}>
+              <Fab variant="extended" onClick={toggleTheme} >
                 {isDarkMode ? 'Dark Mode' : 'Light Mode'}
               </Fab>
             </Box>
           </Toolbar>
         </AppBar>
-        <Intro />
-        <Skill />
+        <Intro isDarkMode={isDarkMode} />
+        <Skill isDarkMode={isDarkMode} />
         <Project />
         <Experience />
         <Contact />

@@ -6,7 +6,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Button from '@mui/material/Button';
 import { Link } from '@mui/material';
 
-function Intro() {
+function Intro(props) {
     return (
         <Fragment>
             <div className='Intro'>
@@ -23,13 +23,13 @@ function Intro() {
                         </img></span></h1>
                     <p className='Intro-Para'>A passionate Software Developer 🚀 with experience in building web aplications using JavaScript,
                         React.js, Firebase, and some other cool libraries and frameworks.</p><br />
-                    <Link href="https://www.Linkedin.com/in/sarimwaseem/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faLinkedin} style={{ color: "#fff", fontSize: "2em", marginRight: "0.3em" }} /> </Link>
-                    <Link href="https://github.com/MuhammadSarimWaseem" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faGithub} style={{ color: "#fff", fontSize: "2em", marginRight: "0.3em" }} /> </Link>
-                    <Link href="mailto:sarimwaseem84@gmail.com" sx={{ textDecorationLine: "none" }} > <FontAwesomeIcon icon={faEnvelope} style={{ color: "#fff", fontSize: "2em", marginRight: "0.3em" }} /> </Link>
-                    <Link href="https://www.facebook.com/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faFacebook} style={{ color: "#fff", fontSize: "2em", marginRight: "0.3em" }} /> </Link>
-                    <Link href="https://www.instagram.com/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faInstagram} style={{ color: "#fff", fontSize: "2em", marginRight: "0.3em" }} /> </Link><br />
-                    <Link href='https://drive.google.com/file/d/1hX5hqB8F_eJtTbVSLlAevhVtJZqCU7ih/view?usp=sharing' sx={{ color: "#fff", textDecorationLine: "none" }}>
-                        <Button className='button' sx={{ color: "#fff", backgroundColor: "#55198b", marginTop: "2em", fontSize: "1em", }} >See My Resume</Button>
+                    <Link href="https://www.Linkedin.com/in/sarimwaseem/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
+                    <Link href="https://github.com/MuhammadSarimWaseem" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faGithub} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
+                    <Link href="mailto:sarimwaseem84@gmail.com" sx={{ textDecorationLine: "none" }} > <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
+                    <Link href="https://www.facebook.com/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faFacebook} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
+                    <Link href="https://www.instagram.com/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faInstagram} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link><br />
+                    <Link href='https://drive.google.com/file/d/1hX5hqB8F_eJtTbVSLlAevhVtJZqCU7ih/view?usp=sharing' sx={{ textDecorationLine: "none" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'}>
+                        <Button className='button' sx={{ backgroundColor: "#55198b", marginTop: "2em", fontSize: "1em", color: "#fff" }} >See My Resume</Button>
                     </Link>
                 </div>
                 <div>

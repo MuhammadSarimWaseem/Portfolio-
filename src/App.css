@@ -1,23 +1,19 @@
-/* Default styles for elements */
 body,
 h1,
 p {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Light mode styles */
 .bright-mode {
   background-color: #fff;
   color: #171c28;
 }
 
-/* Dark mode styles */
 .dark-mode {
   background-color: #171c28;
   color: #fff;
 }
 
-/* Additional styles */
 .dark-mode .MuiAppBar-root {
   background-color: #171c28;
   color: #fff;
