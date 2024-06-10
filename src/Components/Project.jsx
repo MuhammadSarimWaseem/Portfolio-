@@ -15,7 +15,7 @@ export default function Project() {
             <div className='Card-Component'  >
                 {Data.map((val) => (
                     <Card key={val.id} className='Card' sx={{ maxWidth: 345, backgroundColor: "#171c28", color: "#fff" }}>
-                        <Link href={val.link} sx={{ color: "#fff", textDecorationLine: "none" }} >
+                        <Link target="_blank" href={val.link} sx={{ color: "#fff", textDecorationLine: "none" }} >
                             <CardActionArea sx={{ color: "#fff" }} >
                                 <CardContent >
                                     <Typography gutterBottom variant="h5" component="div" sx={{ color: "#fff" }}>
@@ -30,7 +30,7 @@ export default function Project() {
                     </Card>
                 ))}
                 <div>
-                    <Link href='https://github.com/MuhammadSarimWaseem'>
+                    <Link target="_blank" href='https://github.com/MuhammadSarimWaseem'>
                         <Button className='button' sx={{ color: "#fff", backgroundColor: "#55198b", marginTop: "2em", fontSize: "1em", marginBottom: "6em" }} >MORE PROJECTS</Button>
                     </Link>
                 </div>
