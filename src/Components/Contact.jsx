@@ -24,7 +24,7 @@ function Contact() {
         const { name, email, subject, message } = contactInput;
 
         if (name && email && subject && message) {
-            const res = await fetch("https://portfolio-website-4ebb1-default-rtdb.firebaseio.com/portfolio.json", {
+            const res = await fetch(process.env.REACT_APP_FIREBASE_DATABASE_URL, {
                 method: "POST",
                 headers: { "content-type": "application/json", },
                 body: JSON.stringify({
