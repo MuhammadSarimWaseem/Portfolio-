@@ -1,3 +1,6 @@
+# Project Description
+Created a responsive portfolio website using React for the frontend and Firebase for backend services. The site highlights key projects, professional experience, and skills, offering a seamless user experience.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
