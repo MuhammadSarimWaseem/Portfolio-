@@ -47,4 +47,15 @@ export const Data = [
         description: 'Sleek and user-friendly calculator app for basic arithmetic operations.',
         link: 'https://iphone-calculator-ten.vercel.app/'
     },
+    {
+        id: '9',
+        name: 'Event Management System',
+        description: 'A robust event management system for saving and managing notes, built with Node.js, MongoDB, Express, and EJS.',
+        link: 'https://github.com/MuhammadSarimWaseem/Event-Management-System'
+    },{
+        id: '10',
+        name: 'Blogging app',
+        description: 'A blogging app for saving and managing notes with Node.js, MongoDB, Express, EJS, authentication, and user-specific posts.',
+        link: 'https://github.com/MuhammadSarimWaseem/Bloging-App'
+    }
 ];
