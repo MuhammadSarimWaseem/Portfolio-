@@ -8,15 +8,15 @@ import { Data } from './ProjectData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 
-export default function Project() {
+export default function Project(props) {
     return (
-        <Fragment>
+        <Fragment >
             <h1 className='Project-Heading'>PROJECTS</h1>
             <div className='Card-Component'>
                 {Data.map((val) => (
                     <Card key={val.id} className='Card' sx={{ maxWidth: 345, backgroundColor: "#171c28", color: "#fff" }}>
-                        <Link target="_blank" href={val.link} sx={{ color: "#fff", textDecorationLine: "none" }} >
-                            <CardActionArea sx={{ color: "#fff" }} >
+                        <Link target="_blank" href={val.link} sx={{ color: "#fff"}} >
+                            <CardActionArea sx={{ color: "#fff" }}  >
                                 <CardContent >
                                     <Typography gutterBottom variant="h5" component="div" sx={{ color: "#fff" }}>
                                         <FontAwesomeIcon icon={faCode} /> {val.name}

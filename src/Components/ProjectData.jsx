@@ -50,7 +50,7 @@ export const Data = [
     {
         id: '9',
         name: 'Event Management System',
-        description: 'A robust event management system for saving and managing notes, built with Node.js, MongoDB, Express, and EJS.',
+        description: 'A robust event management system for seamless note management, built with Node.js, MongoDB, Express, and EJS.',
         link: 'https://github.com/MuhammadSarimWaseem/Event-Management-System'
     },{
         id: '10',

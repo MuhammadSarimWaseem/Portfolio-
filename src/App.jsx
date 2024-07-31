@@ -39,7 +39,7 @@ function App() {
         </AppBar>
         <Intro isDarkMode={isDarkMode} />
         <Skill isDarkMode={isDarkMode} />
-        <Project />
+        <Project isDarkMode={isDarkMode} />
         <Experience />
         <Contact />
       </div>

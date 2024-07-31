@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './Skill.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faCss3Alt, faHtml5, faJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faBootstrap, faCss3Alt, faHtml5, faJs, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
 
 function Skill() {
     return (
@@ -27,6 +27,7 @@ function Skill() {
                 <p><FontAwesomeIcon icon={faJs} /><br />JavaScript</p>
                 <p><FontAwesomeIcon icon={faReact} /><br />React</p>
                 <p><FontAwesomeIcon icon={faPython} /><br />Python</p>
+                <p><FontAwesomeIcon icon={faNodeJs} /><br />Nodejs</p>
             </div>
         </Fragment>
     );
