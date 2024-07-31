@@ -9,12 +9,10 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import Fab from '@mui/material/Fab';
 
-const navItems = ['Skills', 'Projects', 'Work Experience', 'Contact'];
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -26,17 +24,13 @@ function App() {
   return (
     <Fragment className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
       <div className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
-        <AppBar >
+        <AppBar className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
           <Toolbar className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <FontAwesomeIcon icon={faCode} /> Muhammad Sarim <FontAwesomeIcon icon={faCode} />
             </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}  >
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#171c28' }} className={isDarkMode ? 'bright-mode' : 'dark-mode'} >
-                  {item}
-                </Button>
-              ))}
+            <Box sx={{ display: { sm: 'block' } }}  >
+
               <Fab variant="extended" onClick={toggleTheme} >
                 {isDarkMode ? 'Dark Mode' : 'Light Mode'}
               </Fab>
