@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <Fragment>
+    <Fragment className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
       <div className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
         <AppBar >
           <Toolbar className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
