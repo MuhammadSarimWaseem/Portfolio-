@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import './Project.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,15 +7,25 @@ import { Button, CardActionArea, Link } from '@mui/material';
 import { Data } from './ProjectData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Project(props) {
+    useEffect(() => {
+        AOS.init({
+            offset: 100,
+            delay: 100,
+            duration: 1000,
+        });
+        AOS.refresh();
+    }, []);
     return (
         <Fragment >
             <h1 className='Project-Heading'>PROJECTS</h1>
             <div className='Card-Component'>
                 {Data.map((val) => (
-                    <Card key={val.id} className='Card' sx={{ maxWidth: 345, backgroundColor: "#171c28", color: "#fff" }}>
-                        <Link target="_blank" href={val.link} sx={{ color: "#fff"}} >
+                    <Card data-aos="fade-up" key={val.id} className='Card' sx={{ maxWidth: 345, backgroundColor: "#171c28", color: "#fff" }}>
+                        <Link target="_blank" href={val.link} sx={{ color: "#fff" }} >
                             <CardActionArea sx={{ color: "#fff" }}  >
                                 <CardContent >
                                     <Typography gutterBottom variant="h5" component="div" sx={{ color: "#fff" }}>

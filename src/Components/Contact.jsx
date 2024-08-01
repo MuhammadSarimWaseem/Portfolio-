@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import './Contact.css'
 import { Button } from '@mui/material';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Contact() {
     const [contactInput, setContactInput] = useState({
@@ -55,8 +57,8 @@ function Contact() {
     return (
         <Fragment>
             <section className="contact-me" id="let's-connect">
-                <h1>LET'S CONNECT</h1>
-                <div className="contact-box">
+                <h1 data-aos="fade-right">LET'S CONNECT</h1>
+                <div data-aos="fade-down" className="contact-box">
                     <form>
                         <div className="inputbox">
                             <input onChange={ContactInputHandler} type="text" name="name" required="required" value={contactInput.name} />
