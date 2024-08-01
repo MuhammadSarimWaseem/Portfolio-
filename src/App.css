@@ -5,7 +5,7 @@ p {
 }
 
 .Typography{
-  font-size: 1.5em;
+  font-size: 1.2em;
 
 }
 
@@ -55,7 +55,7 @@ p {
 
 @media (max-width: 746px) {
   .Typography{
-    font-size: 0.5rem;
+    font-size: 1em;
 
   }
 
