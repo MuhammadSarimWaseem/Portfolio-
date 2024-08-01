@@ -31,13 +31,6 @@
     animation: fadeIn 1s ease-in-out, shake 0.5s ease-in-out, bounce 0.5s ease-in-out, pulse 1s ease-in-out;
 }
 
-@media (max-width: 746px) {
-    .Card-Component {
-        font-size: 0.5em;
-    }
-
-}
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
