@@ -5,15 +5,23 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faCss3Alt, faHtml5, faJs, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faBootstrap, faCss3Alt, faHtml5, faJs, faReact,faNodeJs } from '@fortawesome/free-brands-svg-icons';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init({
+    offset: 320,
+    delay: 100, // values from 0 to 3000, with step 50ms
+  duration: 1000, 
+});
 
 function Experience() {
     return (
         <Fragment>
             <h1 className='Experience-Heading'>EXPERIENCES</h1>
-            <div className='Experience-Card-Component'>
-                <Card className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
-                    <CardActionArea sx={{ color: "#fff" }}>
+            <div className='Experience-Card-Component' >
+                <Card data-aos="fade-right" className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
+                    <CardActionArea sx={{ color: "#fff" }} >
                         <CardContent>
                             <Typography gutterBottom variant="h3" component="div" sx={{ color: "#fff" }}>
                                 SYNC INTERN'S
@@ -30,11 +38,12 @@ function Experience() {
                                 <p><FontAwesomeIcon icon={faBootstrap} /></p>
                                 <p><FontAwesomeIcon icon={faJs} /></p>
                                 <p><FontAwesomeIcon icon={faReact} /></p>
+                                <p><FontAwesomeIcon icon={faNodeJs} /></p>
                             </div>
                         </CardContent>
                     </CardActionArea>
                 </Card>
-                <Card className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
+                <Card data-aos="fade-left" className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
                     <CardActionArea sx={{ color: "#fff" }}>
                         <CardContent>
                             <Typography gutterBottom variant="h3" component="div" sx={{ color: "#fff" }}>
@@ -52,6 +61,7 @@ function Experience() {
                                 <p><FontAwesomeIcon icon={faBootstrap} /></p>
                                 <p><FontAwesomeIcon icon={faJs} /></p>
                                 <p><FontAwesomeIcon icon={faReact} /></p>
+                                <p><FontAwesomeIcon icon={faNodeJs} /></p>
                             </div>
                         </CardContent>
                     </CardActionArea>
