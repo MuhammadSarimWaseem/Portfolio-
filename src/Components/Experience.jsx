@@ -14,7 +14,7 @@ function Experience() {
         AOS.init({
             offset: 100,
             delay: 100, 
-            duration: 800,
+            duration: 1000,
         });
         AOS.refresh();
     }, []);
