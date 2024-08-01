@@ -45,5 +45,7 @@
     .Experience-Card-Component {
         padding: 15px 32px;
         font-size: 1em;
+        align-items: center;
     }
+
 }

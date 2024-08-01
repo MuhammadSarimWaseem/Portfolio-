@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useEffect } from 'react';
 import './Experience.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,20 +7,23 @@ import { CardActionArea } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBootstrap, faCss3Alt, faHtml5, faJs, faReact,faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init({
-    offset: 320,
-    delay: 100, // values from 0 to 3000, with step 50ms
-  duration: 1000, 
-});
+import 'aos/dist/aos.css'; 
 
 function Experience() {
+    useEffect(() => {
+        AOS.init({
+            offset: 100,
+            delay: 100, 
+            duration: 800,
+        });
+        AOS.refresh();
+    }, []);
+
     return (
         <Fragment>
             <h1 className='Experience-Heading'>EXPERIENCES</h1>
             <div className='Experience-Card-Component' >
-                <Card data-aos="fade-right" className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
+                <Card data-aos="fade-up" className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
                     <CardActionArea sx={{ color: "#fff" }} >
                         <CardContent>
                             <Typography gutterBottom variant="h3" component="div" sx={{ color: "#fff" }}>
@@ -43,7 +46,7 @@ function Experience() {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-                <Card data-aos="fade-left" className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
+                <Card data-aos="fade-up" className='Experience-Card' sx={{ maxWidth: 500, backgroundColor: "#171c28", color: "#fff" }}>
                     <CardActionArea sx={{ color: "#fff" }}>
                         <CardContent>
                             <Typography gutterBottom variant="h3" component="div" sx={{ color: "#fff" }}>
