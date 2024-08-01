@@ -1,5 +1,6 @@
 .Project-Heading {
     text-align: center;
+    padding-top: 4em;
 }
 
 .Card {
@@ -17,7 +18,9 @@
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    padding: 25px 32px;
+    padding: 1em;
+    line-height: 1.6;
+    margin: 2em,0em;
 }
 
 .Card:hover {
@@ -30,8 +33,9 @@
 
 @media (max-width: 746px) {
     .Card-Component {
-        font-size: 1em;
+        font-size: 0.5em;
     }
+
 }
 
 @keyframes fadeIn {

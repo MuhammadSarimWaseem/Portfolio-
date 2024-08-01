@@ -44,10 +44,10 @@ function App() {
 
   return (
     <Fragment className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
-      <div className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
-        <AppBar className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
+      <div className={isDarkMode ? 'bright-mode' : 'dark-mode'}  >
+        <AppBar className="{isDarkMode ? 'bright-mode' : 'dark-mode'} Typography">
           <Toolbar className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Typography className='Typography' sx={{ flexGrow: 1 }}>
               <FontAwesomeIcon icon={faCode} /> Muhammad Sarim <FontAwesomeIcon icon={faCode} />
             </Typography>
             <Box sx={{ display: { sm: 'block' } }}>
