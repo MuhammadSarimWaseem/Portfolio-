@@ -36,19 +36,16 @@ body {
 
 h1 {
     font-size: 4em;
-    animation: slideInLeft 1s ease-out;
 }
 
 .Intro-Para {
     font-size: 2em;
     line-height: 40px;
-    animation: fadeIn 2s ease-in-out;
 }
 
 .Intro-Image {
     height: 100%;
     width: 450%;
-    animation: pulse 2s infinite;
 }
 
 @media (max-width: 768px) {
@@ -61,20 +58,17 @@ h1 {
 
     h1 {
         font-size: 2.2em;
-        animation: slideInLeft 1s ease-out;
     }
 
     .Intro-Para {
         font-size: 1.1em;
         line-height: 30px;
-        animation: fadeIn 2s ease-in-out;
     }
 
     .Intro-Image {
         height: 120%;
         width: 100%;
         margin-top: 3em;
-        animation: pulse 2s infinite;
     }
 }
 
@@ -86,33 +80,4 @@ h1 {
     to {
         opacity: 1;
     }
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-.button:hover {
-    background-color: #fff !important;
-    color: #55198b;
 }

@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import './Contact.css'
 import { Button } from '@mui/material';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function Contact() {
@@ -57,7 +56,7 @@ function Contact() {
     return (
         <Fragment>
             <section className="contact-me" id="let's-connect">
-                <h1 data-aos="fade-right">LET'S CONNECT</h1>
+                <h1 >LET'S CONNECT</h1>
                 <div data-aos="fade-down" className="contact-box">
                     <form>
                         <div className="inputbox">

@@ -13,7 +13,6 @@ function Experience() {
     useEffect(() => {
         AOS.init({
             offset: 100,
-            delay: 100,
             duration: 1000,
         });
         AOS.refresh();

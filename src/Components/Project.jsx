@@ -14,7 +14,6 @@ export default function Project(props) {
     useEffect(() => {
         AOS.init({
             offset: 100,
-            delay: 100,
             duration: 1000,
         });
         AOS.refresh();

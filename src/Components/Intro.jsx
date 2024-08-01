@@ -5,12 +5,14 @@ import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Button from '@mui/material/Button';
 import { Link } from '@mui/material';
+import 'aos/dist/aos.css';
 
 function Intro(props) {
     return (
         <Fragment>
-            <div className='Intro'>
-                <div>
+
+            <div data-aos="fade-right" className='Intro'>
+                <div data-aos="fade-right">
                     <h1>Hi all, I'm Sarim<span className='wave-emoji'>
                         <img alt="👋" draggable="false"
                             src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png"

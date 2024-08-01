@@ -2,11 +2,12 @@ import React, { Fragment } from 'react';
 import './Skill.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBootstrap, faCss3Alt, faHtml5, faJs, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
+import 'aos/dist/aos.css';
 
 function Skill() {
     return (
         <Fragment>
-            <div className='Skill'>
+            <div data-aos="fade-right" className='Skill'>
                 <div>
                     <img className='Skill-Image' src='https://i.pinimg.com/originals/2a/53/65/2a53651a35816f499270d8275fd5318f.gif' alt=''></img>
                 </div>
@@ -20,7 +21,7 @@ function Skill() {
                     </ul>
                 </div>
             </div>
-            <div className='Lang'>
+            <div className='Lang' data-aos="fade-right">
                 <p><FontAwesomeIcon icon={faHtml5} /><br />Html5</p>
                 <p><FontAwesomeIcon icon={faCss3Alt} /><br />CSS3</p>
                 <p><FontAwesomeIcon icon={faBootstrap} /><br />Bootstrap</p>
