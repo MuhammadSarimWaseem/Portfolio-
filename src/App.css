@@ -4,9 +4,8 @@ p {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.Typography{
+.Typography {
   font-size: 1.2em;
-
 }
 
 .bright-mode {
@@ -27,6 +26,7 @@ p {
 .dark-mode .MuiButton-root {
   color: #fff;
 }
+
 #topButton {
   position: fixed;
   bottom: 20px;
@@ -34,12 +34,13 @@ p {
   z-index: 99;
   border: none;
   outline: none;
-  background-color:  #55198b;
+  background-color: #55198b;
   color: white;
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
-  display: none; /* Initially hidden */
+  display: none;
+  /* Initially hidden */
   transition: opacity 0.3s;
 }
 
@@ -48,15 +49,32 @@ p {
 }
 
 #topButton {
-  display: block; /* Show button when condition is met */
+  display: block;
+  /* Show button when condition is met */
 }
 
-
-
 @media (max-width: 746px) {
-  .Typography{
+  .Typography {
     font-size: 1em;
-
   }
+}
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #171c28;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5c657a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: whitesmoke;
 }

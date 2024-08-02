@@ -24,13 +24,13 @@ export default function Project(props) {
             <div className='Card-Component'>
                 {Data.map((val) => (
                     <Card data-aos="fade-up" key={val.id} className='Card' sx={{ maxWidth: 345, backgroundColor: "#171c28", color: "#fff" }}>
-                        <Link target="_blank" href={val.link} sx={{ color: "#fff" , textDecoration:"none" }} >
+                        <Link target="_blank" href={val.link} sx={{ color: "#fff", textDecoration: "none" }} >
                             <CardActionArea sx={{ color: "#fff" }}  >
                                 <CardContent >
                                     <Typography gutterBottom variant="h5" component="div" sx={{ color: "#fff" }}>
                                         <FontAwesomeIcon icon={faCode} /> {val.name}
                                     </Typography>
-                                    <Typography className='.Card-para' variant="body1" sx={{ color: "#fff"}}>
+                                    <Typography className='.Card-para' variant="body1" sx={{ color: "#fff" }}>
                                         {val.description}
                                     </Typography>
                                 </CardContent>
@@ -44,7 +44,6 @@ export default function Project(props) {
                     </Link>
                 </div>
             </div>
-
         </Fragment>
     );
 }
