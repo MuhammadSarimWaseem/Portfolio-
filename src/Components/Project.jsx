@@ -39,8 +39,8 @@ export default function Project(props) {
                     </Card>
                 ))}
                 <div>
-                    <Link target="_blank" href='https://github.com/MuhammadSarimWaseem'>
-                        <Button className='button' sx={{ color: "#fff", backgroundColor: "#55198b", marginTop: "2em", fontSize: "1em", marginBottom: "6em" }} >MORE PROJECTS</Button>
+                    <Link className='project' target="_blank" href='https://github.com/MuhammadSarimWaseem'>
+                        <Button sx={{ color: "#fff", backgroundColor: "#55198b", marginTop: "2em", fontSize: "1em", marginBottom: "6em" }} >MORE PROJECTS</Button>
                     </Link>
                 </div>
             </div>

@@ -49,6 +49,17 @@ h1 {
     filter: drop-shadow(1rem 1rem 1rem grey);
 }
 
+.resumebutton button {
+    background-color: #55198b;
+    color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+}
+
+.resumebutton button:hover {
+    background-color: #7A3BB4 !important;
+}
+
+
 @media (max-width: 768px) {
     .Intro {
         display: block;

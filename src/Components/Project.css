@@ -95,3 +95,13 @@
         transform: scale(1);
     }
 }
+
+.project button {
+    background-color: #55198b;
+    color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(100%, 100%, 100%, 0.5);
+}
+
+.project button:hover {
+    background-color: #7A3BB4 !important;
+}
