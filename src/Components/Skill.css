@@ -83,7 +83,6 @@ li {
     }
 }
 
-/* Define animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
