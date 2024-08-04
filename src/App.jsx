@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { faHandPointUp } from '@fortawesome/free-solid-svg-icons';
 import Fab from '@mui/material/Fab';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -52,7 +53,7 @@ function App() {
             </Typography>
             <Box sx={{ display: { sm: 'block' } }}>
               <Fab variant="extended" onClick={toggleTheme}>
-                {isDarkMode ? 'Dark Mode' : 'Light Mode'}
+                {isDarkMode ? <MdLightMode size={24} /> : <MdDarkMode size={24} />}
               </Fab>
             </Box>
           </Toolbar>

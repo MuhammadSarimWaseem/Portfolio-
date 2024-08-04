@@ -12,7 +12,8 @@ p {
   background-color: whitesmoke;
   color: #171c28;
 }
-
+/* import { MdDarkMode, MdLightMode } from 'react-icons/md'; */
+/* <MdLightMode size={24} /> : <MdDarkMode size={24} */
 .dark-mode {
   background-color: #171c28;
   color: #fff;
