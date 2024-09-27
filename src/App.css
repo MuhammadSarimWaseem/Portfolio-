@@ -79,3 +79,14 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: whitesmoke;
 }
+
+/* App.css */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #171c28; /* Change as needed */
+  color: #fff;
+}
