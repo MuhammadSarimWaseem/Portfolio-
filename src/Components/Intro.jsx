@@ -1,45 +1,34 @@
-import React, { Fragment } from 'react';
-import './Intro.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import Button from '@mui/material/Button';
-import { Link } from '@mui/material';
-import 'aos/dist/aos.css';
+import React from 'react';
+import './Intro.css';
+import { FiArrowDownRight, FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
-function Intro(props) {
-    return (
-        <Fragment>
-
-            <div data-aos="fade-right" className='Intro'>
-                <div data-aos="fade-right">
-                    <h1>Hi all, I'm Sarim<span className='wave-emoji'>
-                        <img alt="👋" draggable="false"
-                            src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png"
-                            style={{
-                                height: '1em',
-                                width: '1em',
-                                margin: '0px 0.05em 0px 0.1em',
-                                verticalAlign: '-0.1em'
-                            }}>
-                        </img></span></h1>
-                    <p className='Intro-Para'>A passionate Software Developer 🚀 with experience in building web aplications using JavaScript,
-                        React.js, Firebase, and some other cool libraries and frameworks.</p><br />
-                    <Link target="_blank" href="https://www.Linkedin.com/in/sarimwaseem/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
-                    <Link target="_blank" href="https://github.com/MuhammadSarimWaseem" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faGithub} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
-                    <Link target="_blank" href="mailto:sarimwaseem84@gmail.com" sx={{ textDecorationLine: "none" }} > <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
-                    <Link target="_blank" href="https://www.facebook.com/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faFacebook} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link>
-                    <Link target="_blank" href="https://www.instagram.com/" sx={{ textDecorationLine: "none" }}> <FontAwesomeIcon icon={faInstagram} style={{ fontSize: "2em", marginRight: "0.3em" }} className={props.isDarkMode ? 'bright-mode' : 'dark-mode'} /> </Link><br />
-                    <Link className='resumebutton' target="_blank" href='https://drive.google.com/file/d/1hX5hqB8F_eJtTbVSLlAevhVtJZqCU7ih/view?usp=sharing' >
-                        <Button sx={{ marginTop: "2em", fontSize: "1em" }} >See My Resume</Button>
-                    </Link>
-                </div>
-                <div>
-                    <img className='Intro-Image' src='https://design-system.w3.org/dist/assets/svg/illustration-1.svg' alt=''></img>
-                </div>
-            </div>
-        </Fragment>
-    );
+function Intro() {
+  return (
+    <section className="hero" id="home">
+      <div className="hero-copy">
+        <div className="availability"><span /> Available for new opportunities</div>
+        <p className="eyebrow">Full-stack software engineer</p>
+        <h1>I turn ideas into <span>production-ready products.</span></h1>
+        <p className="hero-description">I’m Muhammad Sarim, a full-stack engineer building user-focused web applications and scalable backends with React, Next.js, Node.js, and Supabase.</p>
+        <div className="hero-actions">
+          <a className="button primary-button" href="#projects">View my work <FiArrowDownRight /></a>
+          <a className="button secondary-button" target="_blank" rel="noreferrer" href={`${process.env.PUBLIC_URL}/Muhammad-Sarim-Resume.pdf`}>Resume <FiDownload /></a>
+        </div>
+        <div className="social-links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/sarimwaseem/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
+          <a href="https://github.com/MuhammadSarimWaseem" target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a>
+          <a href="mailto:sarimwaseem84@gmail.com" aria-label="Email"><FiMail /></a>
+        </div>
+      </div>
+      <div className="hero-visual" aria-hidden="true">
+        <div className="code-window">
+          <div className="window-bar"><i /><i /><i /><span>portfolio.jsx</span></div>
+          <pre><code><b>const</b> developer = {'{'}{`\n`}  name: <em>'Muhammad Sarim'</em>,{`\n`}  craft: [<em>'React'</em>, <em>'Node'</em>],{`\n`}  mindset: <em>'always learning'</em>{`\n`}{'}'};{`\n\n`}<b>function</b> buildIdea(idea) {'{'}{`\n`}  <b>return</b> idea.toProduct();{`\n`}{'}'}</code></pre>
+          <div className="code-status"><span>JavaScript</span><span>Ready to build</span></div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Intro;

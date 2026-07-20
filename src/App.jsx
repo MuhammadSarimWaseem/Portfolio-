@@ -1,104 +1,98 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Intro from './Components/Intro';
 import Skill from './Components/Skill';
 import Project from './Components/Project';
 import Contact from './Components/Contact';
 import Experience from './Components/Experience';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faHandPointUp } from '@fortawesome/free-solid-svg-icons';
-import Fab from '@mui/material/Fab';
-import { MdDarkMode, MdLightMode } from 'react-icons/md';
-import { ClipLoader } from 'react-spinners';
+import { FiArrowUp, FiMoon, FiSun } from 'react-icons/fi';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('portfolio-theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
   const [showTopButton, setShowTopButton] = useState(false);
-  const [loading, setLoading] = useState(true); // Add loading state
 
-  // Toggle the dark/light mode
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
-
-  // Handle scroll visibility for the 'scroll to top' button
-  const handleScroll = () => {
-    if (window.pageYOffset > 300) {
-      setShowTopButton(true);
-    } else {
-      setShowTopButton(false);
-    }
-  };
-
-  // Scroll to top functionality
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  // Listen to window scroll event
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const handleScroll = () => setShowTopButton(window.scrollY > 500);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Simulate a loading period
   useEffect(() => {
-    // This simulates a loading period of 2 seconds
-    const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false after 2 seconds
-    }, 2000);
+    const targets = document.querySelectorAll(
+      '.section-heading, .about-panel, .skill-grid, .project-card, .timeline-item, .career-extras article, .contact-copy, .contact-form'
+    );
+    targets.forEach((target, index) => {
+      target.classList.add('scroll-reveal');
+      target.style.setProperty('--reveal-delay', `${(index % 3) * 90}ms`);
+    });
 
-    return () => clearTimeout(timer); // Cleanup timeout
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -45px' });
+
+    targets.forEach(target => observer.observe(target));
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <Fragment>
-      {/* Conditionally render the loading spinner */}
-      {loading ? (
-        <div className="loading-screen">
-          <ClipLoader color="#3498db" loading={loading} size={50} />
-          <Typography variant="h5" style={{ marginTop: '20px' }}>
-            Loading, please wait...
-          </Typography>
-        </div>
-      ) : (
-        <div className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
-          <AppBar className={isDarkMode ? 'bright-mode Typography' : 'dark-mode Typography'}>
-            <Toolbar className={isDarkMode ? 'bright-mode' : 'dark-mode'}>
-              <Typography className="Typography" variant="h7" sx={{ flexGrow: 1 }}>
-                <FontAwesomeIcon icon={faCode} /> Muhammad Sarim <FontAwesomeIcon icon={faCode} />
-              </Typography>
-              <Box sx={{ display: { sm: 'block' } }}>
-                <Fab variant="extended" onClick={toggleTheme}>
-                  {isDarkMode ? <MdLightMode size={24} /> : <MdDarkMode size={24} />}
-                </Fab>
-              </Box>
-            </Toolbar>
-          </AppBar>
+    <div className="site-shell">
+      <header className="site-header">
+        <a className="brand" href="#home" aria-label="Muhammad Sarim, home">
+          <span className="brand-mark">MS</span>
+          <span>Muhammad Sarim</span>
+        </a>
+        <nav className="site-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          className="icon-button theme-toggle"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? <FiSun /> : <FiMoon />}
+        </button>
+      </header>
 
-          {/* Main content of the app */}
-          <Intro isDarkMode={isDarkMode} />
-          <Skill isDarkMode={isDarkMode} />
-          <Project isDarkMode={isDarkMode} />
-          <Experience />
-          <Contact />
+      <main>
+        <Intro />
+        <Skill />
+        <Project />
+        <Experience />
+        <Contact />
+      </main>
 
-          {/* Scroll to top button */}
-          {showTopButton && (
-            <button id="topButton" title="Go to top" onClick={scrollToTop}>
-              <FontAwesomeIcon icon={faHandPointUp} />
-            </button>
-          )}
-        </div>
-      )}
-    </Fragment>
+      <footer className="site-footer">
+        <span>Designed and built by Muhammad Sarim</span>
+        <span>Full-stack software engineer - Karachi, Pakistan</span>
+      </footer>
+
+      <button
+        className={`icon-button back-to-top ${showTopButton ? 'is-visible' : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <FiArrowUp />
+      </button>
+    </div>
   );
 }
 

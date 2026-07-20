@@ -1,89 +1,49 @@
-import React, { Fragment, useState } from 'react';
-import './Contact.css'
-import { Button } from '@mui/material';
-import 'aos/dist/aos.css';
+import React, { useState } from 'react';
+import './Contact.css';
+import { FiArrowUpRight, FiMail, FiSend } from 'react-icons/fi';
 
 function Contact() {
-    const [contactInput, setContactInput] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-    })
+  const [fields, setFields] = useState({ name: '', email: '', subject: '', message: '' });
+  const [status, setStatus] = useState({ text: '', type: '' });
+  const [sending, setSending] = useState(false);
 
-    const ContactInputHandler = (event) => {
-        const { name, value } = event.target;
-        setContactInput((prevInput) => ({
-            ...prevInput,
-            [name]: value
-        }));
-    }
+  const updateField = ({ target: { name, value } }) => setFields(current => ({ ...current, [name]: value }));
+  const submit = async (event) => {
+    event.preventDefault();
+    if (!Object.values(fields).every(Boolean)) return setStatus({ text: 'Please complete all fields.', type: 'error' });
+    if (!process.env.REACT_APP_FIREBASE_DATABASE_URL) return setStatus({ text: 'Email me directly at sarimwaseem84@gmail.com.', type: 'error' });
+    setSending(true);
+    try {
+      const response = await fetch(process.env.REACT_APP_FIREBASE_DATABASE_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(fields) });
+      if (!response.ok) throw new Error('Request failed');
+      setFields({ name: '', email: '', subject: '', message: '' });
+      setStatus({ text: 'Thanks! Your message has been sent.', type: 'success' });
+    } catch {
+      setStatus({ text: 'Something went wrong. Please email me directly.', type: 'error' });
+    } finally { setSending(false); }
+  };
 
-    const [contactMessage, setContactMessage] = useState(null);
-    const FetchContacts = async (e) => {
-        e.preventDefault()
-        const { name, email, subject, message } = contactInput;
-
-        if (name && email && subject && message) {
-            const res = await fetch(process.env.REACT_APP_FIREBASE_DATABASE_URL, {
-                method: "POST",
-                headers: { "content-type": "application/json", },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    subject,
-                    message
-                })
-            })
-            if (res.ok) {
-                setContactMessage("Message sent successfully!");
-                setTimeout(() => {
-                    setContactMessage(null);
-                }, 5000);
-                setContactInput({
-                    name: "",
-                    email: "",
-                    subject: "",
-                    message: ""
-                })
-            } else {
-                setContactMessage("Failed to send message. Please try again.");
-            }
-        } else {
-            setContactMessage("Please fill All the fields")
-        }
-    }
-    return (
-        <Fragment>
-            <section className="contact-me" id="let's-connect">
-                <h1 >LET'S CONNECT</h1>
-                <div data-aos="fade-down" className="contact-box">
-                    <form>
-                        <div className="inputbox">
-                            <input onChange={ContactInputHandler} type="text" name="name" required="required" value={contactInput.name} />
-                            <label>Name</label>
-                        </div>
-                        <div className="inputbox">
-                            <input onChange={ContactInputHandler} type="email" name="email" required="required" value={contactInput.email} />
-                            <label>Email</label>
-                        </div>
-                        <div className="inputbox">
-                            <input onChange={ContactInputHandler} type="text" name="subject" required="required" value={contactInput.subject} />
-                            <label>Subject</label>
-                        </div>
-                        <div className="inputbox">
-                            <textarea onChange={ContactInputHandler} name="message" id="message" rows="5" required="required" value={contactInput.message}></textarea>
-                            <label>Type Your Message...</label>
-                        </div>
-                        <div className="submit">
-                            <Button onClick={FetchContacts} type="submit" className="submit-btn">SEND</Button>
-                        </div>
-                        {contactMessage && <div className="message">{contactMessage}</div>}
-                    </form>
-                </div>
-            </section>
-        </Fragment>
-    );
+  return (
+    <section className="contact-band" id="contact">
+      <div className="section contact-layout">
+        <div className="contact-copy">
+          <p className="section-kicker">Get in touch</p>
+          <h2>Have an idea worth building?</h2>
+          <p>I’m open to freelance projects, collaborations, and software development opportunities. Tell me what you’re working on.</p>
+          <a href="mailto:sarimwaseem84@gmail.com"><FiMail /> sarimwaseem84@gmail.com <FiArrowUpRight /></a>
+        </div>
+        <form className="contact-form" onSubmit={submit}>
+          <div className="form-row">
+            <label>Name<input name="name" value={fields.name} onChange={updateField} placeholder="Your name" autoComplete="name" /></label>
+            <label>Email<input type="email" name="email" value={fields.email} onChange={updateField} placeholder="you@example.com" autoComplete="email" /></label>
+          </div>
+          <label>Subject<input name="subject" value={fields.subject} onChange={updateField} placeholder="What can I help with?" /></label>
+          <label>Message<textarea name="message" value={fields.message} onChange={updateField} rows="5" placeholder="A few details about your project..." /></label>
+          <button className="button primary-button submit-button" type="submit" disabled={sending}>{sending ? 'Sending...' : 'Send message'} <FiSend /></button>
+          {status.text && <p className={`form-status ${status.type}`} role="status">{status.text}</p>}
+        </form>
+      </div>
+    </section>
+  );
 }
-
 export default Contact;

@@ -1,61 +1,58 @@
 export const Data = [
-    {
-        id: '1',
-        name: 'Grocery Store',
-        description: 'Virtual grocery store built with HTML, CSS, and JavaScript for online shopping.',
-        link: 'http://grocery-store-taupe.vercel.app/'
-    },
-    {
-        id: '2',
-        name: 'Quiz App',
-        description: 'Engaging React app offering interactive quizzes on various topics.',
-        link: 'https://quiz-app-ecru-ten.vercel.app/'
-    },
-    {
-        id: '3',
-        name: 'Firebase Authentication',
-        description: 'Secure login/signup system integrated with Firebase for web applications.',
-        link: 'https://firebase-authentications.vercel.app/'
-    },
-    {
-        id: '4',
-        name: 'Foody App',
-        description: 'Dynamic food ordering app with React, React Router, and Firebase.',
-        link: 'https://foody-rosy.vercel.app/'
-    },
-    {
-        id: '5',
-        name: 'User Data Fetcher',
-        description: "JavaScript API project for efficient retrieval and display of people's data.",
-        link: 'https://fetch-api-delta.vercel.app/'
-    },
-    {
-        id: '6',
-        name: 'To Do App',
-        description: 'Intuitive to-do list with advanced task management features.',
-        link: 'https://to-do-list-chi-woad.vercel.app/'
-    },
-    {
-        id: '7',
-        name: 'QuotifyHub',
-        description: 'Dynamic website fetching and displaying inspiring quotes via API.',
-        link: 'https://quotify-hub.vercel.app/'
-    },
-    {
-        id: '8',
-        name: 'Calculator',
-        description: 'Sleek and user-friendly calculator app for basic arithmetic operations.',
-        link: 'https://iphone-calculator-ten.vercel.app/'
-    },
-    {
-        id: '9',
-        name: 'Event Management',
-        description: 'A robust event management system for seamless note management, built with Node.js, MongoDB, Express, and EJS.',
-        link: 'https://github.com/MuhammadSarimWaseem/Event-Management-System'
-    }, {
-        id: '10',
-        name: 'Blogging app',
-        description: 'A blogging app for saving and managing notes with Node.js, MongoDB, Express, authentication, and user-specific posts.',
-        link: 'https://github.com/MuhammadSarimWaseem/Bloging-App'
-    }
+  {
+    id: '1',
+    name: 'Dropshipping Platform',
+    description: 'MERN commerce platform with JWT authentication, cart and product management, automated emails, and role-based admin and seller dashboards.',
+    tags: ['MERN', 'JWT', 'E-commerce'],
+    link: 'https://github.com/MuhammadSarimWaseem/E-Commerce'
+  },
+  {
+    id: '2',
+    name: 'CopyRank',
+    description: 'AI-powered SEO platform that analyzes websites, researches keywords, generates articles, manages subscriptions, and publishes directly to WordPress and Framer.',
+    tags: ['Next.js', 'Supabase', 'AI'],
+    link: 'https://copyrank.ai/'
+  },
+  {
+    id: '3',
+    name: 'Mortgage Financial Arena',
+    description: 'AI social media platform for mortgage brokers with responsive workflows, authentication, REST API integrations, testing, and performance improvements.',
+    tags: ['React', 'REST API', 'AI'],
+    link: 'https://mortgagesocial.co.uk/'
+  },
+  {
+    id: '4',
+    name: 'Stafftrackerfb',
+    description: 'Automated CI/CD pipeline designed and implemented to make project builds and deployments faster, repeatable, and more dependable.',
+    tags: ['CI/CD', 'Automation', 'Deployment'],
+    link: 'https://football-coaching-ui.vercel.app/'
+  },
+  {
+    id: '5',
+    name: 'Boldfusion',
+    description: 'Custom backend for fetching and managing WordPress ACF data, integrated with a purpose-built frontend and deployed through CyberPanel.',
+    tags: ['WordPress', 'Backend', 'CyberPanel'],
+    link: 'https://boldfusion.ae/'
+  },
+  {
+    id: '6',
+    name: 'Artful Swipe',
+    description: 'Full-stack product discovery platform featuring 2,300+ products, Supabase authentication, favorites, value tracking, analytics, and role-based dashboards.',
+    tags: ['React', 'Supabase', 'Analytics'],
+    link: 'https://artful-swipe-discover.vercel.app/'
+  },
+  {
+    id: '7',
+    name: 'Erosa',
+    description: 'WordPress ACF data backend connected to a custom frontend, with server configuration, domain setup, and full-stack CyberPanel deployment.',
+    tags: ['WordPress', 'API', 'Deployment'],
+    link: 'https://erosa.ae/'
+  },
+  {
+    id: '8',
+    name: 'Stripe Integration',
+    description: 'Secure payment system with backend APIs and a responsive cart and checkout experience built using React, Node.js, and Stripe.',
+    tags: ['React', 'Node.js', 'Stripe'],
+    link: 'https://github.com/MuhammadSarimWaseem/Stripe-Integration'
+  }
 ];

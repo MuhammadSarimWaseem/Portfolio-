@@ -1,37 +1,39 @@
-import React, { Fragment } from 'react';
-import './Skill.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faCss3Alt, faHtml5, faJs, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
-import 'aos/dist/aos.css';
+import React from 'react';
+import './Skill.css';
+import { FaCss3Alt, FaHtml5, FaJs, FaNodeJs, FaPython, FaReact, FaWordpress } from 'react-icons/fa';
+import { FiCheck } from 'react-icons/fi';
+
+const technologies = [
+  ['HTML5', FaHtml5], ['CSS3', FaCss3Alt], ['JavaScript', FaJs], ['React', FaReact],
+  ['Next.js', FaReact], ['Node.js', FaNodeJs], ['Python', FaPython], ['WordPress', FaWordpress]
+];
 
 function Skill() {
-    return (
-        <Fragment>
-            <div data-aos="fade-right" className='Skill'>
-                <div>
-                    <img className='Skill-Image' src='https://i.pinimg.com/originals/2a/53/65/2a53651a35816f499270d8275fd5318f.gif' alt=''></img>
-                </div>
-                <div >
-                    <h2>What I do</h2>
-                    <p className='Skill-Para'>CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK</p>
-                    <ul>
-                        <li>⚡ Develop highly interactive front-end and user interfaces.</li>
-                        <li>⚡ Proficient in building Progressive Web Applications (PWAs).</li>
-                        <li>⚡ Experienced in Firebase for backend tasks like authentication and database management.</li>
-                    </ul>
-                </div>
+  return (
+    <section className="section skills-section" id="about">
+      <div className="section-heading">
+        <div><p className="section-kicker">About & skills</p><h2>Building for people, not just browsers.</h2></div>
+        <p>I enjoy translating complex requirements into interfaces that feel direct, responsive, and easy to use.</p>
+      </div>
+      <div className="skills-layout">
+        <div className="about-panel reveal">
+          <p className="about-lead">I work across the product, from polished interfaces to reliable APIs, databases, and production deployments.</p>
+          <ul>
+            <li><FiCheck /> Interactive, accessible user interfaces</li>
+            <li><FiCheck /> React, Next.js, Redux, and Zustand</li>
+            <li><FiCheck /> Node.js, Express, MongoDB, and Supabase</li>
+            <li><FiCheck /> Authentication, payments, CI/CD, and deployment</li>
+          </ul>
+        </div>
+        <div className="skill-grid reveal">
+          {technologies.map(([name, Icon], index) => (
+            <div className="skill-item" key={name} style={{ '--delay': `${index * 55}ms` }}>
+              <Icon /><span>{name}</span>
             </div>
-            <div className='Lang' data-aos="fade-right">
-                <p><FontAwesomeIcon icon={faHtml5} /><br />Html5</p>
-                <p><FontAwesomeIcon icon={faCss3Alt} /><br />CSS3</p>
-                <p><FontAwesomeIcon icon={faBootstrap} /><br />Bootstrap</p>
-                <p><FontAwesomeIcon icon={faJs} /><br />JavaScript</p>
-                <p><FontAwesomeIcon icon={faReact} /><br />React</p>
-                <p><FontAwesomeIcon icon={faPython} /><br />Python</p>
-                <p><FontAwesomeIcon icon={faNodeJs} /><br />Nodejs</p>
-            </div>
-        </Fragment>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
-
 export default Skill;
