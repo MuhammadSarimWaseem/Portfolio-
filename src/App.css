@@ -32,13 +32,15 @@ body { background: var(--bg); color: var(--text); transition: background .3s eas
 a { color: inherit; }
 button, input, textarea { font: inherit; }
 .site-shell { min-height: 100vh; overflow: hidden; background: var(--bg); }
+.scroll-progress { position: fixed; z-index: 120; top: 0; left: 0; width: 100%; height: 3px; transform-origin: left; background: var(--accent); transition: transform .08s linear; }
 .site-header { position: fixed; z-index: 100; top: 0; left: 0; right: 0; height: 72px; display: flex; align-items: center; gap: 32px; padding: 0 max(24px, calc((100vw - 1180px) / 2)); background: var(--header); border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent); backdrop-filter: blur(18px); }
 .brand { display: flex; align-items: center; gap: 11px; margin-right: auto; font-weight: 750; text-decoration: none; }
 .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; color: #fff; background: var(--primary); border-radius: 6px; font-size: 13px; letter-spacing: 0; }
 :root[data-theme='dark'] .brand-mark { color: #102127; }
 .site-nav { display: flex; gap: 28px; }
-.site-nav a { color: var(--muted); font-size: 14px; font-weight: 650; text-decoration: none; transition: color .2s ease; }
-.site-nav a:hover { color: var(--primary); }
+.site-nav a { position: relative; padding: 26px 0; color: var(--muted); font-size: 14px; font-weight: 650; text-decoration: none; transition: color .2s ease; }
+.site-nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 17px; height: 2px; background: var(--primary); transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
+.site-nav a:hover { color: var(--primary); }.site-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
 .icon-button { display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid var(--line); border-radius: 50%; color: var(--text); background: var(--surface); cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
 .icon-button:hover { transform: translateY(-2px); border-color: var(--primary); }
 .theme-toggle svg, .back-to-top svg { width: 19px; height: 19px; }

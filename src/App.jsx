@@ -14,6 +14,7 @@ function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
   const [showTopButton, setShowTopButton] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -21,7 +22,11 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    const handleScroll = () => setShowTopButton(window.scrollY > 500);
+    const handleScroll = () => {
+      setShowTopButton(window.scrollY > 500);
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0);
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -50,6 +55,7 @@ function App() {
 
   return (
     <div className="site-shell">
+      <div className="scroll-progress" style={{ transform: `scaleX(${scrollProgress / 100})` }} />
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Muhammad Sarim, home">
           <span className="brand-mark">MS</span>
