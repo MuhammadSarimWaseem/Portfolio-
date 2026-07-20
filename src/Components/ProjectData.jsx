@@ -11,14 +11,16 @@ export const Data = [
     name: 'CopyRank',
     description: 'AI-powered SEO platform that analyzes websites, researches keywords, generates articles, manages subscriptions, and publishes directly to WordPress and Framer.',
     tags: ['Next.js', 'Supabase', 'AI'],
-    link: 'https://copyrank.ai/'
+    link: 'https://copyrank.ai/',
+    featured: true
   },
   {
     id: '3',
     name: 'Mortgage Financial Arena',
     description: 'AI social media platform for mortgage brokers with responsive workflows, authentication, REST API integrations, testing, and performance improvements.',
     tags: ['React', 'REST API', 'AI'],
-    link: 'https://mortgagesocial.co.uk/'
+    link: 'https://mortgagesocial.co.uk/',
+    featured: true
   },
   {
     id: '4',
@@ -39,7 +41,8 @@ export const Data = [
     name: 'Artful Swipe',
     description: 'Full-stack product discovery platform featuring 2,300+ products, Supabase authentication, favorites, value tracking, analytics, and role-based dashboards.',
     tags: ['React', 'Supabase', 'Analytics'],
-    link: 'https://artful-swipe-discover.vercel.app/'
+    link: 'https://artful-swipe-discover.vercel.app/',
+    featured: true
   },
   {
     id: '7',

@@ -1,17 +1,28 @@
-.projects-band { background: var(--surface-2); border-block: 1px solid var(--line); }
+.projects-band { background: var(--surface-2); border-block: 1px solid var(--line); scroll-margin-top: 72px; }
 .projects-inner { max-width: 1180px; }
 .projects-inner .section-heading { align-items: center; }
 .text-link { width: fit-content; display: inline-flex; align-items: center; gap: 9px; color: var(--primary); font-weight: 700; text-decoration: none; }
 .text-link:hover { text-decoration: underline; }
+.featured-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.featured-card:first-child { grid-column: 1 / -1; min-height: 310px; padding: 38px; }
+.featured-card:not(:first-child) { min-height: 320px; }
+.featured-label { display: inline-block; margin-top: 28px; color: var(--primary); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.featured-card h3 { margin: 30px 0 12px; font-size: 27px; }
+.featured-card:first-child h3 { margin-top: 38px; font-size: 34px; }
+.featured-card:first-child p { max-width: 720px; min-height: auto; font-size: 17px; line-height: 1.7; }
+.featured-card:not(:first-child) p { min-height: 84px; margin-bottom: 22px; }
+.more-work-heading { display: flex; align-items: center; justify-content: space-between; margin: 58px 0 20px; }
+.more-work-heading h3 { margin: 0; font-size: 21px; }.more-work-heading span { color: var(--muted); font-size: 12px; font-weight: 700; }
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.project-card { min-height: 310px; position: relative; padding: 30px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: var(--surface); box-shadow: 0 10px 30px rgba(20, 33, 61, .05); text-decoration: none; transition: background .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.project-card { min-height: 310px; position: relative; padding: 30px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: var(--surface); box-shadow: 0 10px 30px rgba(20, 33, 61, .05); text-decoration: none; display: flex; flex-direction: column; transition: transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease; }
 .project-card::after { content: ''; position: absolute; inset: auto 30px 0; height: 3px; background: var(--primary); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
-.project-card:hover { background: var(--surface-2); border-color: var(--primary); box-shadow: var(--shadow); }.project-card:hover::after { transform: scaleX(1); }.project-card:hover .project-arrow { transform: translate(3px, -3px); color: var(--primary); }
+.project-card:hover { transform: translateY(-5px); background: var(--surface); border-color: var(--primary); box-shadow: var(--shadow); }.project-card:hover::after { transform: scaleX(1); }.project-card:hover .project-arrow { transform: translate(3px, -3px); color: var(--primary); }
 .project-number { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 1px; }
 .project-arrow { position: absolute; right: 28px; top: 27px; width: 22px; height: 22px; transition: transform .2s, color .2s; }
 .project-card h3 { margin: 52px 0 13px; font-size: 21px; }
 .project-card p { min-height: 112px; margin-bottom: 24px; color: var(--muted); line-height: 1.55; }
-.project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.compact-card { min-height: 275px; padding: 25px; }.compact-card h3 { margin-top: 42px; font-size: 19px; }.compact-card p { min-height: 96px; font-size: 14px; }
+.project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
 .project-tags span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); font-size: 11px; font-weight: 650; }
 @media(max-width: 850px) { .project-grid { grid-template-columns: repeat(2, 1fr); }.project-card p { min-height: 90px; } }
-@media(max-width: 560px) { .project-grid { grid-template-columns: 1fr; }.project-card { min-height: auto; }.project-card p { min-height: auto; } }
+@media(max-width: 650px) { .featured-grid, .project-grid { grid-template-columns: 1fr; }.featured-card:first-child { grid-column: auto; min-height: auto; padding: 30px; }.featured-card:first-child h3 { margin-top: 28px; font-size: 28px; }.featured-card:first-child p, .project-card, .project-card p { min-height: auto; }.featured-card:not(:first-child) { min-height: auto; }.more-work-heading { margin-top: 44px; } }
